@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // database
-const mongo = require('mongo');
+const mongo = require('mongodb');
 const monk = require('monk');
 const db = monk('localhost:27017/nodetest2');
 
