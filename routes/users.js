@@ -20,4 +20,14 @@ router.post('/adduser', (req, res) => {
   });
 });
 
+/* DELETE to deleteuser. */
+router.delete('/deleteuser/:id', (req, res) => {
+  const { db } = req;
+  const collection = db.get('userlist');
+  const userToDelete = req.params.id;
+  collection.remove({ '_id' : userToDelete }, (err) => {
+    res.send((err === null) ? { msg: '' } : { msg: 'error: ' + err });
+  });
+});
+
 module.exports = router;
